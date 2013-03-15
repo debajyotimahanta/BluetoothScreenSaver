@@ -1,10 +1,10 @@
 Getting Started
 ------------------------
-This is a smal productivity until program inspired by a #m2m project [Detect Phone](https://github.com/vlachoudis/DetectPhone)  that i found online . This solution was for linux and i could have written a C++ or XCode to work with OSX. However i too the easy route and  so i looked around and clubbed together a few tools and got it to work. For it to work you will need the following
+This is a small productivity until program inspired by a #m2m project [Detect Phone](https://github.com/vlachoudis/DetectPhone)  that i found online . This solution was for linux and i could have written a C++ or XCode to work with OSX. However i too the easy route and  so i looked around and clubbed together a few tools and got it to work. For it to work you will need the following
 
 
 * [Proximity Sensor](https://code.google.com/p/reduxcomputing-proximity)
-*  Apple Scripts files found in this repo
+*  Apple Scripts files found in this repo under compilled folder
 
 
 How it works
@@ -26,7 +26,7 @@ Problem with Lion OSX
 -------------------------
 As a last work with Lion OSX its difficult to get ride of the password using Apple scripts, i tried a bunch of stuff but couldnt get it to work. Here are some the things i tried
 
-###### Updatring the ask for password option:
+###### Updating the ask for password option:
 			
 			defaults -currentHost write com.apple.screensaver askForPasswordDelay -int 0
 ###### Tried to Set system preference using AppleScripts, but that also didnt work
@@ -35,4 +35,12 @@ As a last work with Lion OSX its difficult to get ride of the password using App
 		tell security preferences
 		set require password to wake to true
 	end tell
+if you are using this code then in outofrange make sure you set the password
+	
+	tell application "System Events"
+		tell security preferences
+			set require password to wake to true
+		end tell
+	end tell
+
 
